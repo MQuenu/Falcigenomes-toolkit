@@ -27,3 +27,30 @@ Usage:
 ```bash
 bash LongReads_variant_calling.sh <bam_reads_file>
 ```
+
+4. Var_sharing.py
+
+Given two fasta files containing var nucleotide sequences from two genomes, will output the number of common shared var genes between genomes. Var genes can here be substituted by rif of stevor to get measures of rif/stevor sharing. The script relies on CD-hit (https://academic.oup.com/bioinformatics/article/22/13/1658/194225) for clustering of var genes.
+
+Usage:
+```bash
+python Var_sharing.py <fasta_var1> <fasta_var_2>
+```
+
+5. extract_var_ups.sh
+
+Given an fasta file scaffold.fa, an annotation file scafs.gff and a list of var genes IDs var_IDs.txt, the script will extract the 600 upstream sequence of each var gene and output it in a fasta file upstream_var.fa
+
+Usage:
+```bash
+bash extract_var_ups.sh
+```
+
+6. Getproteins_var_companion.py, Getproteins_rifin_companion.py and Getproteins_rifin_companion.py (non-recommended)
+
+Given a proteins.fa companion output file, will extract protein sequences of var, rifin, stevor (depending on script). Method less sensible than STRIDE for rifins and stevors.
+
+Usage:
+```bash
+bash Getproteins_var_companion.py <protein fasta file>
+```
